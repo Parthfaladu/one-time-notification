@@ -43,4 +43,12 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'is_receive_notification' => 'boolean'
     ];
+
+    /**
+     * Get the entity's unread notifications without expired.
+     */
+    public function unreadNotificationsWithoutExpired()
+    {
+        return $this->notifications()->unread()->where("expire_at", ">", Carbon::now()->format("Y-m-d"));
+    }
 }
