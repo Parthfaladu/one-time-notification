@@ -30,14 +30,18 @@ DB_DATABASE={db_name}
 DB_USERNAME={db_username}
 DB_PASSWORD={db_password}
 ```
-To run migration and seed user data run following commands:
+run following command to sets the APP_KEY value in `.env` file:
+```sh
+php artisan key:generate
+```
+To migrate and seed user data run following commands:
 ```sh
 php artisan migrate
 php artisan db:seed
 ```
 To compile assets, css and js file in mix run following command:
 ```sh
-php artisan dev or php artisan watch
+npm run dev or npm run watch
 ```
 To run the project use the following command:
 ```sh
